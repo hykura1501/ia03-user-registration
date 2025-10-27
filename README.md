@@ -1,103 +1,104 @@
-# User Registration API with React Frontend
+# IA03 - User Registration System
 
-A complete User Registration System built with NestJS backend and React frontend using shadcn/ui components.
+A complete user registration system with NestJS backend and React frontend using shadcn/ui components.
 
-## Features
-
-### Backend (NestJS)
-- User registration with email and password
-- Password hashing using bcryptjs
-- MongoDB integration with Mongoose
-- Input validation using class-validator
-- CORS enabled for frontend communication
-- Error handling with meaningful messages
-
-### Frontend (React + Vite)
-- Modern React application with TypeScript
-- Beautiful UI using shadcn/ui components
-- Form validation using React Hook Form and Zod
-- API integration using React Query
-- Responsive design with Tailwind CSS
-- Toast notifications for user feedback
-
-## Tech Stack
-
-### Backend
-- NestJS
-- MongoDB with Mongoose
-- bcryptjs for password hashing
-- class-validator for validation
-- TypeScript
-
-### Frontend
-- React 19
-- Vite
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
-- React Router DOM
-- React Hook Form
-- React Query (TanStack Query)
-- Zod for validation
-
-## Installation & Setup
+## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js (v18 or higher)
-- npm or pnpm
-- MongoDB Atlas account (or local MongoDB)
+- Node.js (v18+)
+- MongoDB Atlas account
 
-### Backend Setup
+### 1. Clone & Install
 
-1. Navigate to the backend directory:
 ```bash
+# Clone the repository
+git clone https://github.com/hykura1501/ia03-user-registration.git
+cd ia03-user-registration
+
+# Install backend dependencies
 cd backend
-```
+npm install
 
-2. Install dependencies:
-```bash
+# Install frontend dependencies
+cd ../frontend
 npm install
 ```
 
-3. Set up environment variables:
-Create a `.env` file in the backend directory:
-```
+### 2. Environment Setup
+
+Create `.env` file in `backend/` directory:
+
+```env
 MONGODB_URI=mongodb+srv://hykura:123456789%40123@hykura.rwjtpqe.mongodb.net/awad-ia03?appName=hykura
-PORT=3001
+PORT=3000
+NODE_ENV=development
+FRONTEND_URL=http://localhost:5173
 ```
 
-4. Start the development server:
+### 3. Run the Application
+
+**Terminal 1 - Backend:**
 ```bash
+cd backend
 npm run start:dev
 ```
 
-The backend will be available at `http://localhost:3001`
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
+**Terminal 2 - Frontend:**
 ```bash
 cd frontend
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
 npm run dev
 ```
 
-The frontend will be available at `http://localhost:5173`
+### 4. Access the Application
 
-## API Endpoints
+**Local Development:**
+- **Frontend**: http://localhost:5173
+- **Backend API**: http://localhost:3000
+
+**Live Demo:**
+- **Frontend**: [https://ia03-user-registration-ecru.vercel.app/](https://ia03-user-registration-ecru.vercel.app/)
+- **Backend API**: [https://ia03-user-registration-lswm.onrender.com](https://ia03-user-registration-lswm.onrender.com)
+
+## 📁 Project Structure
+
+```
+ia03/
+├── backend/          # NestJS API
+│   ├── src/
+│   │   ├── user/     # User module
+│   │   ├── app.module.ts
+│   │   └── main.ts
+│   └── package.json
+├── frontend/         # React + Vite
+│   ├── src/
+│   │   ├── pages/    # Home, Login, SignUp
+│   │   ├── components/ui/  # shadcn/ui
+│   │   └── services/ # API calls
+│   └── package.json
+└── README.md
+```
+
+## 🛠️ Tech Stack
+
+**Backend:**
+- NestJS + TypeScript
+- MongoDB + Mongoose
+- bcryptjs (password hashing)
+- class-validator (validation)
+
+**Frontend:**
+- React 19 + TypeScript
+- Vite + Tailwind CSS
+- shadcn/ui components
+- React Hook Form + Zod
+- React Query (API state)
+
+## 📋 API Endpoints
 
 ### POST /user/register
 Register a new user.
 
-**Request Body:**
+**Request:**
 ```json
 {
   "email": "user@example.com",
@@ -118,56 +119,33 @@ Register a new user.
 }
 ```
 
-## Project Structure
+## ✅ Features
 
-```
-ia03/
-├── backend/
-│   ├── src/
-│   │   ├── user/
-│   │   │   ├── dto/
-│   │   │   │   └── create-user.dto.ts
-│   │   │   ├── user.controller.ts
-│   │   │   ├── user.module.ts
-│   │   │   ├── user.schema.ts
-│   │   │   └── user.service.ts
-│   │   ├── app.module.ts
-│   │   └── main.ts
-│   ├── package.json
-│   └── tsconfig.json
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   └── ui/
-│   │   ├── hooks/
-│   │   ├── pages/
-│   │   │   ├── Home.tsx
-│   │   │   ├── Login.tsx
-│   │   │   └── SignUp.tsx
-│   │   ├── services/
-│   │   │   └── api.ts
-│   │   ├── App.tsx
-│   │   └── main.tsx
-│   ├── package.json
-│   └── vite.config.ts
-└── README.md
-```
+- ✅ User registration with validation
+- ✅ Password hashing & security
+- ✅ Beautiful UI with shadcn/ui
+- ✅ Form validation & error handling
+- ✅ API integration with React Query
+- ✅ Responsive design
+- ✅ Toast notifications
+- ✅ Ready for deployment
 
-## Usage
+## 📝 Usage
 
-1. Start both backend and frontend servers
-2. Open `http://localhost:5173` in your browser
-3. Navigate to the Sign Up page to register a new user
-4. Use the Login page to simulate user login (UI only)
+**Live Demo:**
+1. Visit [https://ia03-user-registration-ecru.vercel.app/](https://ia03-user-registration-ecru.vercel.app/)
+2. Click "Sign Up" to register
+3. Fill in email and password
+4. Submit to create account
+5. Use "Login" page (UI only)
 
-## Deployment
+**Local Development:**
+1. Open http://localhost:5173
+2. Click "Sign Up" to register
+3. Fill in email and password
+4. Submit to create account
+5. Use "Login" page (UI only)
 
-The application is designed to be deployed on platforms like:
-- Backend: Railway, Render, or Heroku
-- Frontend: Vercel, Netlify, or GitHub Pages
+---
 
-Make sure to update the API_BASE_URL in the frontend service to point to your deployed backend URL.
-
-## License
-
-This project is created for educational purposes as part of the AWDA IA03 assignment.
+**Created for AWDA IA03 Assignment** | NestJS + React + MongoDB
